@@ -28,7 +28,7 @@ public class AllocationDataGateway {
 
         jdbcTemplate.update(connection -> {
             PreparedStatement ps = connection.prepareStatement(
-                "insert into allocations (project_id, user_id, first_day, last_day) values (?, ?, ?, ?)", RETURN_GENERATED_KEYS
+                    "insert into allocations (project_id, user_id, first_day, last_day) values (?, ?, ?, ?)", RETURN_GENERATED_KEYS
             );
 
             ps.setLong(1, fields.projectId);
@@ -43,25 +43,25 @@ public class AllocationDataGateway {
 
     public List<AllocationRecord> findAllByProjectId(Long projectId) {
         return jdbcTemplate.query(
-            "select id, project_id, user_id, first_day, last_day from allocations where project_id = ? order by first_day",
-            rowMapper, projectId
+                "select id, project_id, user_id, first_day, last_day from allocations where project_id = ? order by first_day",
+                rowMapper, projectId
         );
     }
 
 
     private AllocationRecord find(long id) {
         return jdbcTemplate.queryForObject(
-            "select id, project_id, user_id, first_day, last_day from allocations where id = ?",
-            rowMapper, id
+                "select id, project_id, user_id, first_day, last_day from allocations where id = ?",
+                rowMapper, id
         );
     }
 
     private RowMapper<AllocationRecord> rowMapper =
-        (rs, rowNum) -> AllocationRecord.allocationRecordBuilder()
-            .id(rs.getLong("id"))
-            .projectId(rs.getLong("project_id"))
-            .userId(rs.getLong("user_id"))
-            .firstDay(rs.getDate("first_day").toLocalDate())
-            .lastDay(rs.getDate("last_day").toLocalDate())
-            .build();
+            (rs, rowNum) -> AllocationRecord.allocationRecordBuilder()
+                    .id(rs.getLong("id"))
+                    .projectId(rs.getLong("project_id"))
+                    .userId(rs.getLong("user_id"))
+                    .firstDay(rs.getDate("first_day").toLocalDate())
+                    .lastDay(rs.getDate("last_day").toLocalDate())
+                    .build();
 }

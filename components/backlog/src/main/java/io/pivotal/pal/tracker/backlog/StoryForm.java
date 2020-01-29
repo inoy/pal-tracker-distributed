@@ -59,8 +59,8 @@ public class StoryForm {
     @Override
     public String toString() {
         return "StoryForm{" +
-            "projectId=" + projectId +
-            ", name='" + name + '\'' +
-            '}';
+                "projectId=" + projectId +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

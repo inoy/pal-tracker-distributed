@@ -77,10 +77,10 @@ public class TimeEntryFields {
     @Override
     public String toString() {
         return "TimeEntryFields{" +
-            "projectId=" + projectId +
-            ", userId=" + userId +
-            ", date=" + date +
-            ", hours=" + hours +
-            '}';
+                "projectId=" + projectId +
+                ", userId=" + userId +
+                ", date=" + date +
+                ", hours=" + hours +
+                '}';
     }
 }

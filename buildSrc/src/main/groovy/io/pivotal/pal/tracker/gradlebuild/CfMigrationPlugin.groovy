@@ -22,7 +22,7 @@ class CfMigrationPlugin implements Plugin<Project> {
                 def appName = databases.cfApp
                 def databaseInstanceName = databases.cfDatabase
 
-                task( "acquireCredentials") {
+                task("acquireCredentials") {
                     doLast {
                         println "Acquiring database credentials"
                         credentials = acquireMysqlCredentials(databaseInstanceName)

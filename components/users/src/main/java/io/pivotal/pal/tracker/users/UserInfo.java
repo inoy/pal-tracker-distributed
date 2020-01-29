@@ -41,9 +41,9 @@ public class UserInfo {
     @Override
     public String toString() {
         return "UserInfo{" +
-            "id=" + id +
-            ", name='" + name + '\'' +
-            ", info='" + info + '\'' +
-            '}';
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", info='" + info + '\'' +
+                '}';
     }
 }

@@ -58,7 +58,7 @@ public class ProjectDataGatewayTest {
 
 
         assertThat(result).containsExactlyInAnyOrder(
-            projectRecordBuilder().id(22L).accountId(1L).name("aProject").active(true).build()
+                projectRecordBuilder().id(22L).accountId(1L).name("aProject").active(true).build()
         );
     }
 
@@ -73,7 +73,7 @@ public class ProjectDataGatewayTest {
 
 
         assertThat(foundRecord).isEqualTo(
-            projectRecordBuilder().id(22L).accountId(1L).name("aProject").active(true).build()
+                projectRecordBuilder().id(22L).accountId(1L).name("aProject").active(true).build()
         );
     }
 }

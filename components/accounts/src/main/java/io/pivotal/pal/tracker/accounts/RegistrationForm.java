@@ -30,7 +30,7 @@ public class RegistrationForm {
     @Override
     public String toString() {
         return "RegistrationForm{" +
-            "name='" + name + '\'' +
-            '}';
+                "name='" + name + '\'' +
+                '}';
     }
 }

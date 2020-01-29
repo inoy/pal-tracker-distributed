@@ -40,9 +40,9 @@ class DependenciesGraphPlugin implements Plugin<Project> {
                             Configuration compileConfig = subProject.configurations["compile"]
 
                             compileConfig
-                                .dependencies
-                                .grep { it.respondsTo("getDependencyProject") && !isProjectExcluded(it) }
-                                .forEach { dotFile << """  "$subProject.name" -> "$it.dependencyProject.name"\n""" }
+                                    .dependencies
+                                    .grep { it.respondsTo("getDependencyProject") && !isProjectExcluded(it) }
+                                    .forEach { dotFile << """  "$subProject.name" -> "$it.dependencyProject.name"\n""" }
                         } catch (UnknownConfigurationException ignored) {
                         }
                     }

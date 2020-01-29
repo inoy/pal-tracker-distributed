@@ -29,9 +29,9 @@ public class StoryDataGatewayTest {
     @Test
     public void testCreate() {
         StoryFields fields = storyFieldsBuilder()
-            .projectId(22L)
-            .name("aStory")
-            .build();
+                .projectId(22L)
+                .name("aStory")
+                .build();
 
 
         StoryRecord created = gateway.create(fields);
@@ -56,11 +56,11 @@ public class StoryDataGatewayTest {
 
 
         assertThat(result).containsExactly(
-            storyRecordBuilder()
-                .id(1346L)
-                .projectId(22L)
-                .name("aStory")
-                .build()
+                storyRecordBuilder()
+                        .id(1346L)
+                        .projectId(22L)
+                        .name("aStory")
+                        .build()
         );
     }
 }

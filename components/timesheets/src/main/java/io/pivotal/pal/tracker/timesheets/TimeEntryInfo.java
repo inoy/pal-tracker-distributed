@@ -98,12 +98,12 @@ public class TimeEntryInfo {
     @Override
     public String toString() {
         return "TimeEntryInfo{" +
-            "id=" + id +
-            ", projectId=" + projectId +
-            ", userId=" + userId +
-            ", date=" + date +
-            ", hours=" + hours +
-            ", info='" + info + '\'' +
-            '}';
+                "id=" + id +
+                ", projectId=" + projectId +
+                ", userId=" + userId +
+                ", date=" + date +
+                ", hours=" + hours +
+                ", info='" + info + '\'' +
+                '}';
     }
 }

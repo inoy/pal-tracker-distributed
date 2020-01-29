@@ -21,8 +21,8 @@ public class HttpClient {
     public Response post(String url, Map<String, Object> jsonBody) {
         try {
             Request.Builder reqBuilder = new Request.Builder()
-                .url(url)
-                .post(RequestBody.create(JSON, objectMapper.writeValueAsString(jsonBody)));
+                    .url(url)
+                    .post(RequestBody.create(JSON, objectMapper.writeValueAsString(jsonBody)));
 
             return fetch(reqBuilder);
         } catch (IOException e) {
@@ -33,8 +33,8 @@ public class HttpClient {
     public Response put(String url, Map<String, Object> jsonBody) {
         try {
             Request.Builder reqBuilder = new Request.Builder()
-                .url(url)
-                .put(RequestBody.create(JSON, objectMapper.writeValueAsString(jsonBody)));
+                    .url(url)
+                    .put(RequestBody.create(JSON, objectMapper.writeValueAsString(jsonBody)));
 
             return fetch(reqBuilder);
         } catch (IOException e) {

@@ -32,9 +32,9 @@ public class ProjectController {
     @GetMapping
     public List<ProjectInfo> list(@RequestParam long accountId) {
         return gateway.findAllByAccountId(accountId)
-            .stream()
-            .map(this::present)
-            .collect(toList());
+                .stream()
+                .map(this::present)
+                .collect(toList());
     }
 
     @GetMapping("/{projectId}")
@@ -51,19 +51,19 @@ public class ProjectController {
 
     private ProjectFields formToFields(ProjectForm form) {
         return projectFieldsBuilder()
-            .accountId(form.accountId)
-            .name(form.name)
-            .active(form.active)
-            .build();
+                .accountId(form.accountId)
+                .name(form.name)
+                .active(form.active)
+                .build();
     }
 
     private ProjectInfo present(ProjectRecord record) {
         return projectInfoBuilder()
-            .id(record.id)
-            .accountId(record.accountId)
-            .name(record.name)
-            .active(record.active)
-            .info("project info")
-            .build();
+                .id(record.id)
+                .accountId(record.accountId)
+                .name(record.name)
+                .active(record.active)
+                .info("project info")
+                .build();
     }
 }

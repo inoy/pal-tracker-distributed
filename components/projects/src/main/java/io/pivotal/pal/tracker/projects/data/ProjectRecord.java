@@ -74,11 +74,11 @@ public class ProjectRecord {
     @Override
     public String toString() {
         return "ProjectRecord{" +
-            "id=" + id +
-            ", accountId=" + accountId +
-            ", name='" + name + '\'' +
-            ", active=" + active +
-            '}';
+                "id=" + id +
+                ", accountId=" + accountId +
+                ", name='" + name + '\'' +
+                ", active=" + active +
+                '}';
     }
 }
 

@@ -56,9 +56,9 @@ public class TimeEntryControllerTest {
     @Test
     public void testList() {
         List<TimeEntryRecord> records = asList(
-            testTimeEntryRecordBuilder().id(10).build(),
-            testTimeEntryRecordBuilder().id(11).build(),
-            testTimeEntryRecordBuilder().id(12).build()
+                testTimeEntryRecordBuilder().id(10).build(),
+                testTimeEntryRecordBuilder().id(11).build(),
+                testTimeEntryRecordBuilder().id(12).build()
         );
         doReturn(records).when(gateway).findAllByUserId(anyLong());
         int userId = 210;
@@ -70,9 +70,9 @@ public class TimeEntryControllerTest {
         verify(gateway).findAllByUserId(userId);
 
         assertThat(result).containsExactlyInAnyOrder(
-            testTimeEntryInfoBuilder().id(10).build(),
-            testTimeEntryInfoBuilder().id(11).build(),
-            testTimeEntryInfoBuilder().id(12).build()
+                testTimeEntryInfoBuilder().id(10).build(),
+                testTimeEntryInfoBuilder().id(11).build(),
+                testTimeEntryInfoBuilder().id(12).build()
         );
     }
 }

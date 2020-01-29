@@ -26,7 +26,7 @@ public class AccountDataGateway {
 
         jdbcTemplate.update(connection -> {
             PreparedStatement ps = connection.prepareStatement(
-                "insert into accounts (owner_id, name) values (?, ?)", RETURN_GENERATED_KEYS
+                    "insert into accounts (owner_id, name) values (?, ?)", RETURN_GENERATED_KEYS
             );
 
             ps.setLong(1, ownerId);
@@ -41,14 +41,14 @@ public class AccountDataGateway {
 
     public List<AccountRecord> findAllByOwnerId(long ownerId) {
         return jdbcTemplate.query(
-            "select id, owner_id, name from accounts where owner_id = ? order by name desc limit 1",
-            rowMapper, ownerId
+                "select id, owner_id, name from accounts where owner_id = ? order by name desc limit 1",
+                rowMapper, ownerId
         );
     }
 
     private RowMapper<AccountRecord> rowMapper = (rs, num) -> accountRecordBuilder()
-        .id(rs.getLong("id"))
-        .ownerId(rs.getLong("owner_id"))
-        .name(rs.getString("name"))
-        .build();
+            .id(rs.getLong("id"))
+            .ownerId(rs.getLong("owner_id"))
+            .name(rs.getString("name"))
+            .build();
 }

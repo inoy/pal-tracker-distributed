@@ -41,9 +41,9 @@ public class AllocationController {
     @GetMapping
     public List<AllocationInfo> list(@RequestParam long projectId) {
         return gateway.findAllByProjectId(projectId)
-            .stream()
-            .map(this::present)
-            .collect(toList());
+                .stream()
+                .map(this::present)
+                .collect(toList());
     }
 
 
@@ -55,21 +55,21 @@ public class AllocationController {
 
     private AllocationFields formToFields(AllocationForm form) {
         return allocationFieldsBuilder()
-            .projectId(form.projectId)
-            .userId(form.userId)
-            .firstDay(LocalDate.parse(form.firstDay))
-            .lastDay(LocalDate.parse(form.lastDay))
-            .build();
+                .projectId(form.projectId)
+                .userId(form.userId)
+                .firstDay(LocalDate.parse(form.firstDay))
+                .lastDay(LocalDate.parse(form.lastDay))
+                .build();
     }
 
     private AllocationInfo present(AllocationRecord record) {
         return allocationInfoBuilder()
-            .id(record.id)
-            .projectId(record.projectId)
-            .userId(record.userId)
-            .firstDay(record.firstDay.toString())
-            .lastDay(record.lastDay.toString())
-            .info("allocation info")
-            .build();
+                .id(record.id)
+                .projectId(record.projectId)
+                .userId(record.userId)
+                .firstDay(record.firstDay.toString())
+                .lastDay(record.lastDay.toString())
+                .info("allocation info")
+                .build();
     }
 }

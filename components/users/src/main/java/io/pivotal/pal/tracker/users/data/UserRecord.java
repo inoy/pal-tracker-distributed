@@ -32,8 +32,8 @@ public class UserRecord {
     @Override
     public String toString() {
         return "UserRecord{" +
-            "id=" + id +
-            ", name='" + name + '\'' +
-            '}';
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

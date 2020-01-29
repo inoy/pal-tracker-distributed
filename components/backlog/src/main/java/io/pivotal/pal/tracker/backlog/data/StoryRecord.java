@@ -64,9 +64,9 @@ public class StoryRecord {
     @Override
     public String toString() {
         return "StoryRecord{" +
-            "id=" + id +
-            ", projectId=" + projectId +
-            ", name='" + name + '\'' +
-            '}';
+                "id=" + id +
+                ", projectId=" + projectId +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

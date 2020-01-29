@@ -38,8 +38,8 @@ public class StoryController {
     @GetMapping
     public List<StoryInfo> list(@RequestParam long projectId) {
         return gateway.findAllByProjectId(projectId).stream()
-            .map(this::present)
-            .collect(toList());
+                .map(this::present)
+                .collect(toList());
     }
 
 
@@ -50,17 +50,17 @@ public class StoryController {
 
     private StoryFields mapToFields(StoryForm form) {
         return storyFieldsBuilder()
-            .projectId(form.projectId)
-            .name(form.name)
-            .build();
+                .projectId(form.projectId)
+                .name(form.name)
+                .build();
     }
 
     private StoryInfo present(StoryRecord record) {
         return storyInfoBuilder()
-            .id(record.id)
-            .projectId(record.projectId)
-            .name(record.name)
-            .info("story info")
-            .build();
+                .id(record.id)
+                .projectId(record.projectId)
+                .name(record.name)
+                .info("story info")
+                .build();
     }
 }

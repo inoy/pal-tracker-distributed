@@ -54,8 +54,8 @@ public class StoryFields {
     @Override
     public String toString() {
         return "StoryFields{" +
-            "projectId=" + projectId +
-            ", name='" + name + '\'' +
-            '}';
+                "projectId=" + projectId +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

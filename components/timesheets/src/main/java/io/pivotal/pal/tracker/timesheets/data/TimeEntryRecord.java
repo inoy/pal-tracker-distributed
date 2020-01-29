@@ -87,11 +87,11 @@ public class TimeEntryRecord {
     @Override
     public String toString() {
         return "TimeEntryRecord{" +
-            "id=" + id +
-            ", projectId=" + projectId +
-            ", userId=" + userId +
-            ", date=" + date +
-            ", hours=" + hours +
-            '}';
+                "id=" + id +
+                ", projectId=" + projectId +
+                ", userId=" + userId +
+                ", date=" + date +
+                ", hours=" + hours +
+                '}';
     }
 }

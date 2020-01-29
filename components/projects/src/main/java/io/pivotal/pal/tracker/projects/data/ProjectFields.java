@@ -65,10 +65,10 @@ public class ProjectFields {
     @Override
     public String toString() {
         return "ProjectFields{" +
-            "accountId=" + accountId +
-            ", name='" + name + '\'' +
-            ", active=" + active +
-            '}';
+                "accountId=" + accountId +
+                ", name='" + name + '\'' +
+                ", active=" + active +
+                '}';
     }
 }
 

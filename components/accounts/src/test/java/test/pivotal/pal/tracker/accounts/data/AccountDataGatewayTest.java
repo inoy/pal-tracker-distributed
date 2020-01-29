@@ -53,10 +53,10 @@ public class AccountDataGatewayTest {
 
 
         assertThat(result).containsExactly(accountRecordBuilder()
-            .id(1L)
-            .ownerId(12L)
-            .name("anAccount")
-            .build()
+                .id(1L)
+                .ownerId(12L)
+                .name("anAccount")
+                .build()
         );
     }
 }

@@ -68,9 +68,9 @@ public class ProjectForm {
     @Override
     public String toString() {
         return "ProjectForm{" +
-            "accountId=" + accountId +
-            ", name='" + name + '\'' +
-            ", active=" + active +
-            '}';
+                "accountId=" + accountId +
+                ", name='" + name + '\'' +
+                ", active=" + active +
+                '}';
     }
 }

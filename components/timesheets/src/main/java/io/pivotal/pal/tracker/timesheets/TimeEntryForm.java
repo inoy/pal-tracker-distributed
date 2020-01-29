@@ -83,10 +83,10 @@ public class TimeEntryForm {
     @Override
     public String toString() {
         return "TimeEntryForm{" +
-            "projectId=" + projectId +
-            ", userId=" + userId +
-            ", date='" + date + '\'' +
-            ", hours=" + hours +
-            '}';
+                "projectId=" + projectId +
+                ", userId=" + userId +
+                ", date='" + date + '\'' +
+                ", hours=" + hours +
+                '}';
     }
 }

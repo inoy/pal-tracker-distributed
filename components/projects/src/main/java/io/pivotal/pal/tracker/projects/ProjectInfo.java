@@ -89,11 +89,11 @@ public class ProjectInfo {
     @Override
     public String toString() {
         return "ProjectInfo{" +
-            "id=" + id +
-            ", accountId=" + accountId +
-            ", name='" + name + '\'' +
-            ", active=" + active +
-            ", info='" + info + '\'' +
-            '}';
+                "id=" + id +
+                ", accountId=" + accountId +
+                ", name='" + name + '\'' +
+                ", active=" + active +
+                ", info='" + info + '\'' +
+                '}';
     }
 }

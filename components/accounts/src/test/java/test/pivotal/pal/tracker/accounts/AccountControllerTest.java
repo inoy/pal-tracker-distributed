@@ -23,10 +23,10 @@ public class AccountControllerTest {
     @Test
     public void testList() {
         AccountRecord recordToFind = accountRecordBuilder()
-            .id(13L)
-            .ownerId(2L)
-            .name("Some Name")
-            .build();
+                .id(13L)
+                .ownerId(2L)
+                .name("Some Name")
+                .build();
         doReturn(singletonList(recordToFind)).when(gateway).findAllByOwnerId(anyLong());
 
 
@@ -35,11 +35,11 @@ public class AccountControllerTest {
 
         verify(gateway).findAllByOwnerId(13L);
         assertThat(result).containsExactly(accountInfoBuilder()
-            .id(13L)
-            .ownerId(2L)
-            .name("Some Name")
-            .info("account info")
-            .build()
+                .id(13L)
+                .ownerId(2L)
+                .name("Some Name")
+                .info("account info")
+                .build()
         );
     }
 }

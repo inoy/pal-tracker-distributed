@@ -64,9 +64,9 @@ public class AccountRecord {
     @Override
     public String toString() {
         return "AccountRecord{" +
-            "id=" + id +
-            ", ownerId=" + ownerId +
-            ", name='" + name + '\'' +
-            '}';
+                "id=" + id +
+                ", ownerId=" + ownerId +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

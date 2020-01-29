@@ -39,29 +39,29 @@ public class TimeEntryController {
     @GetMapping
     public List<TimeEntryInfo> list(@RequestParam long userId) {
         return gateway.findAllByUserId(userId).stream()
-            .map(this::present)
-            .collect(toList());
+                .map(this::present)
+                .collect(toList());
     }
 
 
     private TimeEntryInfo present(TimeEntryRecord record) {
         return timeEntryInfoBuilder()
-            .id(record.id)
-            .projectId(record.projectId)
-            .userId(record.userId)
-            .date(record.date.toString())
-            .hours(record.hours)
-            .info("time entry info")
-            .build();
+                .id(record.id)
+                .projectId(record.projectId)
+                .userId(record.userId)
+                .date(record.date.toString())
+                .hours(record.hours)
+                .info("time entry info")
+                .build();
     }
 
     private TimeEntryFields mapToFields(TimeEntryForm form) {
         return timeEntryFieldsBuilder()
-            .projectId(form.projectId)
-            .userId(form.userId)
-            .date(LocalDate.parse(form.date))
-            .hours(form.hours)
-            .build();
+                .projectId(form.projectId)
+                .userId(form.userId)
+                .date(LocalDate.parse(form.date))
+                .hours(form.hours)
+                .build();
     }
 
     private boolean projectIsActive(long projectId) {

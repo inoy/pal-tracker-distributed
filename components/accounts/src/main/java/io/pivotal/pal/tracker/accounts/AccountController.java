@@ -23,17 +23,17 @@ public class AccountController {
     @GetMapping("/accounts")
     public List<AccountInfo> list(@RequestParam long ownerId) {
         return gateway.findAllByOwnerId(ownerId)
-            .stream()
-            .map(this::present)
-            .collect(toList());
+                .stream()
+                .map(this::present)
+                .collect(toList());
     }
 
     private AccountInfo present(AccountRecord record) {
         return accountInfoBuilder()
-            .id(record.id)
-            .ownerId(record.ownerId)
-            .name(record.name)
-            .info("account info")
-            .build();
+                .id(record.id)
+                .ownerId(record.ownerId)
+                .name(record.name)
+                .info("account info")
+                .build();
     }
 }

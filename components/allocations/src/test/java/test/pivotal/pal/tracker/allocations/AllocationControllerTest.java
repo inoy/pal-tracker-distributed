@@ -28,34 +28,34 @@ public class AllocationControllerTest {
     @Test
     public void testCreate() {
         AllocationRecord record = testAllocationRecordBuilder()
-            .id(20L)
-            .projectId(31L)
-            .firstDay(LocalDate.parse("2016-02-20"))
-            .build();
+                .id(20L)
+                .projectId(31L)
+                .firstDay(LocalDate.parse("2016-02-20"))
+                .build();
         doReturn(record).when(allocationDataGateway).create(any());
         doReturn(new ProjectInfo(true)).when(client).getProject(anyLong());
 
 
         AllocationForm form = testAllocationFormBuilder()
-            .projectId(31L)
-            .firstDay("2016-02-20")
-            .build();
+                .projectId(31L)
+                .firstDay("2016-02-20")
+                .build();
         ResponseEntity<AllocationInfo> response = allocationsController.create(form);
 
 
         verify(allocationDataGateway).create(testAllocationFieldsBuilder()
-            .projectId(31L)
-            .firstDay(LocalDate.parse("2016-02-20"))
-            .build()
+                .projectId(31L)
+                .firstDay(LocalDate.parse("2016-02-20"))
+                .build()
         );
         verify(client).getProject(31L);
 
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.CREATED);
         assertThat(response.getBody()).isEqualTo(testAllocationInfoBuilder()
-            .id(20L)
-            .projectId(31L)
-            .firstDay("2016-02-20")
-            .build()
+                .id(20L)
+                .projectId(31L)
+                .firstDay("2016-02-20")
+                .build()
         );
     }
 
@@ -75,8 +75,8 @@ public class AllocationControllerTest {
     @Test
     public void testList() {
         List<AllocationRecord> records = asList(
-            testAllocationRecordBuilder().id(12L).build(),
-            testAllocationRecordBuilder().id(13L).build()
+                testAllocationRecordBuilder().id(12L).build(),
+                testAllocationRecordBuilder().id(13L).build()
         );
         doReturn(records).when(allocationDataGateway).findAllByProjectId(anyLong());
 
@@ -86,8 +86,8 @@ public class AllocationControllerTest {
 
         verify(allocationDataGateway).findAllByProjectId(13L);
         assertThat(result).containsExactlyInAnyOrder(
-            testAllocationInfoBuilder().id(12L).build(),
-            testAllocationInfoBuilder().id(13L).build()
+                testAllocationInfoBuilder().id(12L).build(),
+                testAllocationInfoBuilder().id(13L).build()
         );
     }
 }

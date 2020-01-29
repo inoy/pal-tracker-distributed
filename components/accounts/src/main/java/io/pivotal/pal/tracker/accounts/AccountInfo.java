@@ -79,10 +79,10 @@ public class AccountInfo {
     @Override
     public String toString() {
         return "AccountInfo{" +
-            "id=" + id +
-            ", ownerId=" + ownerId +
-            ", name='" + name + '\'' +
-            ", info='" + info + '\'' +
-            '}';
+                "id=" + id +
+                ", ownerId=" + ownerId +
+                ", name='" + name + '\'' +
+                ", info='" + info + '\'' +
+                '}';
     }
 }

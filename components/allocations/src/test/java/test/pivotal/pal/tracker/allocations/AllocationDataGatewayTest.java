@@ -31,11 +31,11 @@ public class AllocationDataGatewayTest {
     @Test
     public void testCreate() {
         AllocationFields fields = allocationFieldsBuilder()
-            .projectId(22L)
-            .userId(12L)
-            .firstDay(LocalDate.parse("2016-01-13"))
-            .lastDay(LocalDate.parse("2016-09-17"))
-            .build();
+                .projectId(22L)
+                .userId(12L)
+                .firstDay(LocalDate.parse("2016-01-13"))
+                .lastDay(LocalDate.parse("2016-09-17"))
+                .build();
 
 
         AllocationRecord created = gateway.create(fields);
@@ -64,11 +64,11 @@ public class AllocationDataGatewayTest {
 
 
         assertThat(result).containsExactly(allocationRecordBuilder()
-            .id(97336L)
-            .projectId(22L)
-            .userId(12L)
-            .firstDay(LocalDate.parse("2016-01-13"))
-            .lastDay(LocalDate.parse("2016-09-17"))
-            .build());
+                .id(97336L)
+                .projectId(22L)
+                .userId(12L)
+                .firstDay(LocalDate.parse("2016-01-13"))
+                .lastDay(LocalDate.parse("2016-09-17"))
+                .build());
     }
 }

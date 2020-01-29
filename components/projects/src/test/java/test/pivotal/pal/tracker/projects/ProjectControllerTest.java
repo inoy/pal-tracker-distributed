@@ -40,8 +40,8 @@ public class ProjectControllerTest {
     @Test
     public void testList() {
         List<ProjectRecord> records = asList(
-            testProjectRecordBuilder().id(12).build(),
-            testProjectRecordBuilder().id(13).build()
+                testProjectRecordBuilder().id(12).build(),
+                testProjectRecordBuilder().id(13).build()
         );
         doReturn(records).when(gateway).findAllByAccountId(anyLong());
 
@@ -51,8 +51,8 @@ public class ProjectControllerTest {
 
         verify(gateway).findAllByAccountId(23L);
         assertThat(result).containsExactlyInAnyOrder(
-            testProjectInfoBuilder().id(12).build(),
-            testProjectInfoBuilder().id(13).build()
+                testProjectInfoBuilder().id(12).build(),
+                testProjectInfoBuilder().id(13).build()
         );
     }
 

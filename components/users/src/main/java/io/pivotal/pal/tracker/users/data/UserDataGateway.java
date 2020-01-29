@@ -46,5 +46,5 @@ public class UserDataGateway {
 
 
     private RowMapper<UserRecord> rowMapper =
-        (rs, num) -> new UserRecord(rs.getLong("id"), rs.getString("name"));
+            (rs, num) -> new UserRecord(rs.getLong("id"), rs.getString("name"));
 }

@@ -32,11 +32,11 @@ public class TimeEntryDataGatewayTest {
     @Test
     public void testCreate() {
         TimeEntryFields fields = timeEntryFieldsBuilder()
-            .projectId(22L)
-            .userId(12L)
-            .date(LocalDate.parse("2016-02-28"))
-            .hours(8)
-            .build();
+                .projectId(22L)
+                .userId(12L)
+                .date(LocalDate.parse("2016-02-28"))
+                .hours(8)
+                .build();
         TimeEntryRecord created = gateway.create(fields);
 
 
@@ -63,13 +63,13 @@ public class TimeEntryDataGatewayTest {
 
 
         assertThat(result).containsExactlyInAnyOrder(
-            timeEntryRecordBuilder()
-                .id(2346L)
-                .projectId(22L)
-                .userId(12L)
-                .date(LocalDate.parse("2016-01-13"))
-                .hours(8)
-                .build()
+                timeEntryRecordBuilder()
+                        .id(2346L)
+                        .projectId(22L)
+                        .userId(12L)
+                        .date(LocalDate.parse("2016-01-13"))
+                        .hours(8)
+                        .build()
         );
     }
 }

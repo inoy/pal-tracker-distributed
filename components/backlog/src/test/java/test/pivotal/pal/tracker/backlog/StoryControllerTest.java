@@ -28,21 +28,21 @@ public class StoryControllerTest {
     @Test
     public void testCreate() {
         StoryRecord record = storyRecordBuilder()
-            .id(4L)
-            .projectId(3L)
-            .name("Something Fun")
-            .build();
+                .id(4L)
+                .projectId(3L)
+                .name("Something Fun")
+                .build();
 
         doReturn(record).when(storyDataGateway).create(
-            storyFieldsBuilder().projectId(3L).name("Something Fun").build()
+                storyFieldsBuilder().projectId(3L).name("Something Fun").build()
         );
 
         doReturn(new ProjectInfo(true)).when(client).getProject(anyLong());
 
         StoryForm form = storyFormBuilder()
-            .projectId(3L)
-            .name("Something Fun")
-            .build();
+                .projectId(3L)
+                .name("Something Fun")
+                .build();
 
 
         ResponseEntity<StoryInfo> response = storyController.create(form);
@@ -52,11 +52,11 @@ public class StoryControllerTest {
 
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.CREATED);
         assertThat(response.getBody()).isEqualTo(storyInfoBuilder()
-            .id(4L)
-            .projectId(3L)
-            .name("Something Fun")
-            .info("story info")
-            .build()
+                .id(4L)
+                .projectId(3L)
+                .name("Something Fun")
+                .info("story info")
+                .build()
         );
     }
 
@@ -65,8 +65,8 @@ public class StoryControllerTest {
         doReturn(new ProjectInfo(false)).when(client).getProject(anyLong());
 
         StoryForm form = testStoryFormBuilder()
-            .projectId(3L)
-            .build();
+                .projectId(3L)
+                .build();
 
 
         ResponseEntity<StoryInfo> response = storyController.create(form);
@@ -78,8 +78,8 @@ public class StoryControllerTest {
     @Test
     public void testList() {
         List<StoryRecord> records = asList(
-            testStoryRecordBuilder().id(12L).build(),
-            testStoryRecordBuilder().id(13L).build()
+                testStoryRecordBuilder().id(12L).build(),
+                testStoryRecordBuilder().id(13L).build()
         );
 
         doReturn(records).when(storyDataGateway).findAllByProjectId(anyLong());
@@ -91,8 +91,8 @@ public class StoryControllerTest {
         verify(storyDataGateway).findAllByProjectId(13L);
 
         assertThat(result).containsExactlyInAnyOrder(
-            testStoryInfoBuilder().id(12L).build(),
-            testStoryInfoBuilder().id(13L).build()
+                testStoryInfoBuilder().id(12L).build(),
+                testStoryInfoBuilder().id(13L).build()
         );
     }
 }

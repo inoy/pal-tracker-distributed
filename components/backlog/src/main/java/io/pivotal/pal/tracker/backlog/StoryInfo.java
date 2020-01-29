@@ -80,10 +80,10 @@ public class StoryInfo {
     @Override
     public String toString() {
         return "StoryInfo{" +
-            "id=" + id +
-            ", projectId=" + projectId +
-            ", name='" + name + '\'' +
-            ", info='" + info + '\'' +
-            '}';
+                "id=" + id +
+                ", projectId=" + projectId +
+                ", name='" + name + '\'' +
+                ", info='" + info + '\'' +
+                '}';
     }
 }

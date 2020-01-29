@@ -26,7 +26,7 @@ public class StoryDataGateway {
 
         jdbcTemplate.update(connection -> {
             PreparedStatement ps = connection.prepareStatement(
-                "insert into stories (project_id, name) values (?, ?)", RETURN_GENERATED_KEYS
+                    "insert into stories (project_id, name) values (?, ?)", RETURN_GENERATED_KEYS
             );
 
             ps.setLong(1, fields.projectId);
@@ -39,23 +39,23 @@ public class StoryDataGateway {
 
     public List<StoryRecord> findAllByProjectId(Long projectId) {
         return jdbcTemplate.query(
-            "select id, project_id, name from stories where project_id = ?",
-            rowMapper, projectId
+                "select id, project_id, name from stories where project_id = ?",
+                rowMapper, projectId
         );
     }
 
 
     private StoryRecord find(long id) {
         return jdbcTemplate.queryForObject(
-            "select id, project_id, name from stories where id = ?",
-            rowMapper, id
+                "select id, project_id, name from stories where id = ?",
+                rowMapper, id
         );
     }
 
     private RowMapper<StoryRecord> rowMapper
-        = (rs, num) -> storyRecordBuilder()
-        .id(rs.getLong("id"))
-        .projectId(rs.getLong("project_id"))
-        .name(rs.getString("name"))
-        .build();
+            = (rs, num) -> storyRecordBuilder()
+            .id(rs.getLong("id"))
+            .projectId(rs.getLong("project_id"))
+            .name(rs.getString("name"))
+            .build();
 }
