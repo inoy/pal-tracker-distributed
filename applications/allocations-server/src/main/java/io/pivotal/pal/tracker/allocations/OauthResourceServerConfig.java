@@ -24,13 +24,13 @@ public class OauthResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
-        // TODO what means?
+        // token
         resources.resourceId(null);
     }
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        // TODO what means?
+        // Server
         http.authorizeRequests().anyRequest().authenticated();
     }
 
