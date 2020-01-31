@@ -18,7 +18,6 @@ import java.util.TimeZone;
         "io.pivotal.pal.tracker.registration"
 })
 @EnableEurekaClient
-@EnableCircuitBreaker
 public class App {
     public static void main(String[] args) {
         TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
